@@ -1,7 +1,15 @@
 import React from "react";
+import Layout from "./common/Layout/Layout";
+import AddContact from "./components/AddContact";
+import ContactList from "./components/ContactList";
 
 const App = () => {
-  return <div className="text-2xl text-red-600">App</div>;
+  return (
+    <Layout>
+      <AddContact />
+      <ContactList />
+    </Layout>
+  );
 };
 
 export default App;

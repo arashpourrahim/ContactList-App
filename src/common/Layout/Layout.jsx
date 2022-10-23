@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+import Footer from "../Footer/Footer";
+import Header from "../Header/Header";
 
-const Layout = () => {
+const Layout = ({ children }) => {
   return (
-    <div>Layout</div>
-  )
-}
+    <React.Fragment>
+      <Header />
+      <>{children}</>
+      <Footer />
+    </React.Fragment>
+  );
+};
 
-export default Layout
+export default Layout;
