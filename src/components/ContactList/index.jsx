@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ContactData } from "../../Store/ContactProviders";
+import PeopleCard from "../PeopleCard/PeopleCard";
 
 const ContactList = () => {
+  const { state } = useContext(ContactData);
+  const { contactInfo } = state;
+
+  console.log(contactInfo);
+
   return (
     <article className="p-2 w-1/6 border-r-2 border-gray-200 h-[100vh]">
-      ContactList
+      {contactInfo.map((people) => {
+        return (
+          <div key={people.number}>
+            <PeopleCard people={people} />
+          </div>
+        );
+      })}
     </article>
   );
 };

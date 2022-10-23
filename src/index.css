@@ -19,3 +19,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.peopleName {
+  font-size: 13px;
+  font-weight: 600;
+  color: #111;
+}
+
+.peopleInfo {
+  font-size: 9px;
+  font-weight: 400;
+  color: #555;
+  padding-left: 3px;
+}
