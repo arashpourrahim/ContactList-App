@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const AddContact = () => {
   return (
-    <div>AddContact</div>
-  )
-}
+    <div className="m-0 p-0">
+      <button className="btn-primary">+</button>
+    </div>
+  );
+};
 
-export default AddContact
+export default AddContact;

@@ -1,0 +1,3 @@
+.btn-primary {
+  @apply text-white bg-indigo-700 text-base font-bold px-6 py-2 rounded-lg;
+}
