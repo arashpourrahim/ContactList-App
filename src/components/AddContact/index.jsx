@@ -25,7 +25,11 @@ const AddContact = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch({ type: ACTIONS.ADD_CONTACT, data, event: e });
+    dispatch({
+      type: ACTIONS.ADD_CONTACT,
+      payload: { ...data, data },
+      event: e,
+    });
     toast.success("Hoooooora");
     setActive(false);
   };

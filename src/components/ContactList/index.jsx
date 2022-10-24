@@ -9,7 +9,7 @@ const ContactList = () => {
   console.log(contactInfo);
 
   return (
-    <article className="p-2 w-1/6 border-r-2 border-gray-200 h-[100vh]">
+    <article className="p-2 w-3/12 border-r-2 border-gray-200 h-[100vh]">
       {contactInfo.map((people) => {
         return (
           <div key={people.number}>
