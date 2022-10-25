@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import user from "../../../src/assets/icons/user.png";
 import view from "../../../src/assets/icons/view.png";
 import deleteI from "../../../src/assets/icons/delete.png";
+import { ContactData } from "../../Store/ContactProviders";
+import { ACTIONS } from "../../Store/Actions";
 
 const PeopleCard = ({ people }) => {
+  const { dispatch } = useContext(ContactData);
+
+  const onDelete = (id) => {
+    dispatch({ type: ACTIONS.DELETE_CONTACT, id });
+  };
   return (
     <div className="flex items-center">
       <div className="mx-2">
@@ -18,7 +25,7 @@ const PeopleCard = ({ people }) => {
         <div className="m-1 cursor-pointer">
           <img src={view} alt="view" width="18" height="18" />
         </div>
-        <div className="m-1 cursor-pointer">
+        <div className="m-1 cursor-pointer" onClick={() => onDelete(people.id)}>
           <img src={deleteI} alt="delete" width="18" height="18" />
         </div>
       </div>

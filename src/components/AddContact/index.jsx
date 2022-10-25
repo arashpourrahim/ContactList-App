@@ -27,11 +27,17 @@ const AddContact = () => {
     e.preventDefault();
     dispatch({
       type: ACTIONS.ADD_CONTACT,
-      payload: { ...data, data },
+      data,
       event: e,
     });
     toast.success("Hoooooora");
     setActive(false);
+    setData({
+      id: "",
+      fullName: "",
+      email: "",
+      number: "",
+    });
   };
 
   return (
@@ -79,7 +85,6 @@ const AddContact = () => {
               <button
                 className="bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-lg p-2 w-full"
                 type="button"
-                // onClick={() => setActive(false)}
                 onClick={submitHandler}
               >
                 Submit

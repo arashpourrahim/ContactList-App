@@ -10,13 +10,17 @@ const ContactList = () => {
 
   return (
     <article className="p-2 w-3/12 border-r-2 border-gray-200 h-[100vh]">
-      {contactInfo.map((people) => {
-        return (
-          <div key={people.number}>
-            <PeopleCard people={people} />
-          </div>
-        );
-      })}
+      {contactInfo.length === 0 ? (
+        <p className="input-label">please add contact . . .</p>
+      ) : (
+        contactInfo.map((people) => {
+          return (
+            <div key={people.number}>
+              <PeopleCard people={people} />
+            </div>
+          );
+        })
+      )}
     </article>
   );
 };
