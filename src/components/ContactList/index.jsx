@@ -6,7 +6,10 @@ const ContactList = () => {
   const { state } = useContext(ContactData);
   const { contactInfo } = state;
 
-  console.log(contactInfo);
+    // useEffect(() => {
+    //   const localData = localStorage.getItem(state.contactInfo);
+    //   return localData ? JSON.parse(localData) : [];
+    // }, [state.contactInfo]);
 
   return (
     <article className="p-2 w-3/12 border-r-2 border-gray-200 h-[100vh]">

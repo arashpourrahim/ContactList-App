@@ -4,7 +4,9 @@ import { reducer } from "./Reducer";
 export const ContactData = createContext();
 
 const initialState = {
-  contactInfo: [],
+  contactInfo: localStorage.getItem("contacts").length
+    ? JSON.parse(localStorage.getItem("contacts"))
+    : [],
 };
 
 const ContactProvider = ({ children }) => {
@@ -14,11 +16,6 @@ const ContactProvider = ({ children }) => {
   useEffect(() => {
     localStorage.setItem("contacts", JSON.stringify(state.contactInfo));
   }, [state.contactInfo]);
-
-//   useEffect(() => {
-//     const localData = localStorage.getItem(state.contactInfo);
-//     return localData ? JSON.parse(localData) : [];
-//   }, [state.contactInfo]);
 
   return <ContactData.Provider value={value}>{children}</ContactData.Provider>;
 };
